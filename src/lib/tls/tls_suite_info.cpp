@@ -2,8 +2,8 @@
 * TLS cipher suite information
 *
 * This file was automatically generated from the IANA assignments
-* (tls-parameters.txt hash 6a934405ed41aa4d6113dad17f815867741430ac)
-* by ./src/scripts/tls_suite_info.py on 2016-01-06
+* (tls-parameters.txt hash fe280cb8b13bfdd306a975ab39fda238f77ae3bc)
+* by ./src/scripts/tls_suite_info.py on 2016-03-23
 *
 * Botan is released under the Simplified BSD License (see license.txt)
 */
@@ -156,9 +156,12 @@ std::vector<u16bit> Ciphersuite::all_known_ciphersuite_ids()
       0xC0AD,
       0xC0AE,
       0xC0AF,
-      0xCC13,
-      0xCC14,
-      0xCC15,
+      0xCCA8,
+      0xCCA9,
+      0xCCAA,
+      0xCCAB,
+      0xCCAC,
+      0xCCAD,
       0xFFF0,
       0xFFF1,
       0xFFF2,
@@ -595,14 +598,23 @@ Ciphersuite Ciphersuite::by_id(u16bit suite)
       case 0xC0AF: // ECDHE_ECDSA_WITH_AES_256_CCM_8
          return Ciphersuite(0xC0AF, "ECDSA", "ECDH", "AES-256/CCM(8)", 32, 4, 8, "AEAD", 0, "SHA-256");
 
-      case 0xCC13: // ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
-         return Ciphersuite(0xCC13, "RSA", "ECDH", "ChaCha20Poly1305", 32, 0, 0, "AEAD", 0, "SHA-256");
+      case 0xCCA8: // ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+         return Ciphersuite(0xCCA8, "RSA", "ECDH", "ChaCha20Poly1305", 32, 12, 0, "AEAD", 0, "SHA-256");
 
-      case 0xCC14: // ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
-         return Ciphersuite(0xCC14, "ECDSA", "ECDH", "ChaCha20Poly1305", 32, 0, 0, "AEAD", 0, "SHA-256");
+      case 0xCCA9: // ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+         return Ciphersuite(0xCCA9, "ECDSA", "ECDH", "ChaCha20Poly1305", 32, 12, 0, "AEAD", 0, "SHA-256");
 
-      case 0xCC15: // DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
-         return Ciphersuite(0xCC15, "RSA", "DH", "ChaCha20Poly1305", 32, 0, 0, "AEAD", 0, "SHA-256");
+      case 0xCCAA: // DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+         return Ciphersuite(0xCCAA, "RSA", "DH", "ChaCha20Poly1305", 32, 12, 0, "AEAD", 0, "SHA-256");
+
+      case 0xCCAB: // PSK_WITH_CHACHA20_POLY1305_SHA256
+         return Ciphersuite(0xCCAB, "", "PSK", "ChaCha20Poly1305", 32, 12, 0, "AEAD", 0, "SHA-256");
+
+      case 0xCCAC: // ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256
+         return Ciphersuite(0xCCAC, "", "ECDHE_PSK", "ChaCha20Poly1305", 32, 12, 0, "AEAD", 0, "SHA-256");
+
+      case 0xCCAD: // DHE_PSK_WITH_CHACHA20_POLY1305_SHA256
+         return Ciphersuite(0xCCAD, "", "DHE_PSK", "ChaCha20Poly1305", 32, 12, 0, "AEAD", 0, "SHA-256");
 
       case 0xFFF0: // ECDHE_RSA_WITH_AES_128_OCB_SHA256
          return Ciphersuite(0xFFF0, "RSA", "ECDH", "AES-128/OCB(12)", 16, 4, 0, "AEAD", 0, "SHA-256");

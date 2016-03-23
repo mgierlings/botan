@@ -1,6 +1,17 @@
 Release Notes
 ========================================
 
+Version 1.11.30, Not Yet Released
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Add IETF versions of the ChaCha20Poly1305 ciphersuites from
+  draft-ietf-tls-chacha20-poly1305-04. The previously implemented
+  (non-standard) ChaCha20Poly1305 ciphersuites have been removed.
+
+* A bug in the IETF version of ChaCha20Poly1305 (with 96 bit nonces)
+  caused incorrect computation when the ciphertext or AAD was exactly
+  a multiple of 16 bytes.
+
 Version 1.11.29, 2016-03-20
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
